@@ -1,10 +1,10 @@
-/**
- * Detect Electron renderer process, which is node, but we should
- * treat as a browser.
- */
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-if (typeof process !== 'undefined' && process.type === 'renderer') {
-  module.exports = require('./browser.js');
-} else {
-  module.exports = require('./node.js');
-}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);
